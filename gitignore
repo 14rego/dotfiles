@@ -127,3 +127,10 @@ local.properties
 
 # Mac Users
 .DS_STORE
+
+# Personal Preference
+.idea/
+*.iml
+*.sql
+__pycache__/
+*.code-workspace

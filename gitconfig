@@ -1,6 +1,6 @@
 [user]
-	name = Eric Gach
-	email = eric.gach@gmail.com
+	name = Regan Bourland
+	email = rbourland@dmhadv.com
 [alias]
 	co = checkout
 	br = branch
@@ -81,3 +81,9 @@
 # Include local config to override
 [include]
 	path = ~/.gitconfig.local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

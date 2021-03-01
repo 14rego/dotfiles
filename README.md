@@ -4,3 +4,4 @@ My collection of dotfiles that I've put together through the years. Simple insta
 ## installation
     cd /path/to/dotfiles
     ./install.sh
+    once you install you’ll have to quit your terminal or run `exec $SHELL`
