@@ -1,0 +1,27 @@
+export SAVEHIST=10000
+VIRTUALENVWRAPPER_PYTHON="/usr/local/opt/python@3/libexec/bin/python"
+export PATH="/usr/local/sbin:$PATH"
+zstyle ':vcs_info:*' disable-patterns "${(b)HOME}/Projects/personal(|/*)"
+[ -z "$LC_ALL" ] && export LC_ALL="$LANG"
+# Init Go
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+# Init jenv
+export JENV_ROOT="${HOME}/.jenv"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+# Maven
+export M2_HOME="/usr/local/opt/maven"
+export M2="${M2_HOME}/bin"
+export PATH="${PATH}:${M2_HOME}/bin"
+
+alias dj="./manage.py $1"
+alias pir="pip install -r requirements.txt"
+alias mm="bundle exec middleman $1"
+
+cdsite() {
+    cd ${HOME}/Sites/$1/$2
+    echo "get to work, bourland"
+}
